@@ -1,0 +1,24 @@
+{% extends 'chores/base.html' %}
+{% block content %}
+  <h2>Today</h2>
+  <section>
+    <h3>Members</h3>
+    <ul>
+      {% for m in members %}
+        <li>{{ m.emoji }} {{ m.name }}</li>
+      {% empty %}
+        <li>No members yet</li>
+      {% endfor %}
+    </ul>
+  </section>
+  <section>
+    <h3>Chores</h3>
+    <ul>
+      {% for c in chores %}
+        <li>{{ c.title }} — due {{ c.due_date }}</li>
+      {% empty %}
+        <li>No chores</li>
+      {% endfor %}
+    </ul>
+  </section>
+{% endblock %}
